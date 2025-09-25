@@ -1,4 +1,4 @@
-package com.assignment.ADT_linked_list.LinkedList;
+package LinkedList;
 import java.util.Random;
 
 import com.assignment.ADT_linked_list.Nodes.SingleNode;

@@ -1,6 +1,6 @@
-package com.assignment.ADT_linked_list.LinkedList;
+package LinkedList;
 
-import com.assignment.ADT_linked_list.Nodes.SingleNode;
+import Nodes.SingleNode;
 
 public class Ordered_SLL extends Linked_List{
     private SingleNode head;

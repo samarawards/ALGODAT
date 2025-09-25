@@ -1,4 +1,4 @@
-package com.assignment.ADT_linked_list.LinkedList;
+package LinkedList;
 
 abstract public class Linked_List {
     

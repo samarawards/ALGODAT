@@ -1,4 +1,4 @@
-package com.assignment.ADT_linked_list.Nodes;
+package Nodes;
 
 public class SingleNode extends Node{
     private Object data;

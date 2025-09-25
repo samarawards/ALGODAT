@@ -1,13 +1,8 @@
-package com.assignment.ADT_linked_list;
-
 import java.util.Scanner;
-import com.assignment.ADT_linked_list.LinkedList.*;
+import LinkedList.*;
 
 public class Main {
-    public static void clearScreen() {
-    System.out.print("\033[H\033[2J");
-    System.out.flush();
-}
+
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
         int int_input, first_input; 
@@ -21,7 +16,6 @@ public class Main {
         Sorted_SLL rank = new Sorted_SLL();        
 
         do {
-            clearScreen();
             System.out.println("\n======== INFORMATION SYSTEM OF GALAXY ADVENTURE GAME ========");
             System.out.print(
                 "1. Player Inventory\n" +

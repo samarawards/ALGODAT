@@ -1,6 +1,6 @@
-package com.assignment.ADT_linked_list.LinkedList;
+package LinkedList;
 
-import com.assignment.ADT_linked_list.Nodes.DoubleNode;
+import Nodes.DoubleNode;
 
 public class Double_LL {
     private DoubleNode head;

@@ -1,4 +1,4 @@
-package com.assignment.ADT_linked_list.Nodes;
+package Nodes;
 
 abstract public class Node {
     abstract Object getData();
