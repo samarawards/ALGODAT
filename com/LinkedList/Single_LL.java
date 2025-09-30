@@ -70,7 +70,7 @@ public class Single_LL extends Linked_List {
             return;
         }
         SingleNode temp = head;
-        if (temp.getData() == data) { // Kasus 1: data ada di head
+        if (temp.getData().equals(data)) { // Kasus 1: data ada di head
             head = (SingleNode) temp.getNext();
             if (head == null) { // kalau cuma 1 node
                 tail = null;

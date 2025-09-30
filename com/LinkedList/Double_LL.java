@@ -45,7 +45,7 @@ public class Double_LL {
 
     public DoubleNode findData (Object data){
         DoubleNode temp = head;
-        while (temp.getData() != data) {
+        while (!(temp.getData().equals(data))) {
             temp = (DoubleNode)temp.getNext();            
         }
         return temp;
@@ -72,7 +72,7 @@ public class Double_LL {
         DoubleNode temp = head;
 
         //search the place of the map that wanna be deleted
-        while (temp.getData() != data){
+        while (!(temp.getData().equals(data))){
             if (temp.getNext() == null) {
                 System.out.println("\nThe data " + data + " does not exist");
                 return;
@@ -80,10 +80,10 @@ public class Double_LL {
             temp = (DoubleNode)temp.getNext();
         }
 
-        if (temp.getPrevious() == null) { // delete start point so next map will automaticaly be the start point
+        if (temp.getPrevious().equals(null)) { // delete start point so next map will automaticaly be the start point
             this.head = (DoubleNode)head.getNext();
             head.setPrevious(null); 
-        }else if (temp.getNext() == null) {  // delete finish point so previous map will automaticaly be the finish point
+        }else if (temp.getNext().equals(null)) {  // delete finish point so previous map will automaticaly be the finish point
             ((DoubleNode)temp.getPrevious()).setNext(null);
         }else {
             ((DoubleNode)temp.getPrevious()).setNext(temp.getNext());

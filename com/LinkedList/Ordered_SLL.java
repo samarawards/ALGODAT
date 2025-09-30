@@ -12,10 +12,10 @@ public class Ordered_SLL extends Linked_List{
 
         if (head == null) {
             head = tail = node;
-        } else if (difficulty == ("Hard") || difficulty == "hard") {
+        } else if (difficulty.equals("Hard") || difficulty.equals("hard")) {
             node.setNext(head);
             head = node;
-        } else if (difficulty == ("Easy") || difficulty == "easy") {
+        } else if (difficulty.equals("Easy") || difficulty.equals("easy")) {
             tail.setNext(node);
             tail = node;
         } else {
