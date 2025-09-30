@@ -36,11 +36,11 @@ public class Sorted_SLL extends Single_LL{
     }
     public void deleteData (Object data){
         SingleNode temp = head;
-        if (temp.getData() == data){ //delete head
+        if (temp.getData().equals(data)){ //delete head
             head = (SingleNode)temp.getNext();
             return;
         }
-        while (((SingleNode)temp.getNext()).getData() != data) {
+        while (((SingleNode)temp.getNext()).getData().equals(data)) {
             if (temp == tail){
                 System.out.println("\ndata " + data + " is not found");
                 return;

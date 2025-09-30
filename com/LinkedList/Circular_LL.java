@@ -8,37 +8,51 @@ public class Circular_LL extends Linked_List{
     private SingleNode tail;
     private int size;
 
+    public int getSize(){
+        return this.size;
+    }
+
     public void addHead(Object data){
         SingleNode node = new SingleNode(data, null);
         if (head == null){
-            tail = node;
-        }else{
+            head = tail = node;
+            tail.setNext(head); // node pertama menunjuk dirinya sendiri
+        } else {
             node.setNext(head);
             tail.setNext(node);
+            head = node;
         }
-        head = node;
         this.size++;
     }
 
     public void addTail(Object data){
         SingleNode node = new SingleNode(data, null);
         if (tail == null) {
-            head = node;
-        }
-        else{
+            head = tail = node;
+            tail.setNext(head); // node pertama menunjuk dirinya sendiri
+        } else {
             node.setNext(head);
             tail.setNext(node);
+            tail = node;
         }
-        tail = node;
         this.size++;
     }
     //create common menu
     public void addDataByName(Object data, Object after){
-        SingleNode node = new SingleNode(data, null);
         SingleNode temp = findData(after);
-        
-        node.setNext(temp.getNext());
+        if (temp == null) {
+            System.out.println("Data " + after + " tidak ditemukan.");
+            return;
+        }
+
+        SingleNode node = new SingleNode(data, temp.getNext());
         temp.setNext(node);
+
+        // kalau nambah setelah tail, update tail
+        if (temp == tail) {
+            tail = node;
+        }
+
         this.size++;
     }
 
@@ -47,14 +61,16 @@ public class Circular_LL extends Linked_List{
     }
 
     public SingleNode findData (Object data){
+        if (head == null) return null; 
         SingleNode temp = head;
-        while (temp.getData() != data){
-            temp = (SingleNode)temp.getNext();
-            if (temp == head) {
-                return null;
+        do {
+            if (temp.getData().equals(data)) {
+                return temp;
             }
-        }
-        return temp;
+            temp = (SingleNode) temp.getNext();
+        } while (temp != head);
+
+        return null;
     }
     public void deleteData (Object data){
         SingleNode temp = findData(data);
@@ -77,11 +93,15 @@ public class Circular_LL extends Linked_List{
         this.size--;
     }
     public void display(){
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
         SingleNode temp = head;
         System.out.print("HEAD -> ");
-        do{
+        do {
             System.out.print(temp.getData() + " -> ");
-            temp = (SingleNode)temp.getNext();
+            temp = (SingleNode) temp.getNext();
         } while (temp != head);
         System.out.println("TAIL -> HEAD");
     }

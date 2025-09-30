@@ -95,9 +95,13 @@ public class Main {
                 }else if (int_input == 3){
                     System.out.print("Item name: ");
                     string_input = userInput.nextLine();
-                    System.out.print("Put at number: ");
-                    int_input = userInput.nextInt(); userInput.nextLine();
-                    gacha.addDataByNumber(string_input, int_input);
+                    if (gacha.getSize()==0){
+                        gacha.addHead(string_input);
+                    }else{
+                        System.out.print("Put after: ");
+                        String second_input = userInput.nextLine();
+                        gacha.addDataByName(string_input, second_input);
+                    }
                 }
 
             } else if (first_input == 4){
