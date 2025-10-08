@@ -18,9 +18,9 @@ public class ADT{
         sushi.buy(customer, 5);
 
         //lihat sisa makanan
-        System.out.println(spaghetti.getTotal());
-        System.out.println(nasgor1.getTotal());
-        System.out.println(sushi.getTotal());
+        // System.out.println(spaghetti.getTotal());
+        // System.out.println(nasgor1.getTotal());
+        // System.out.println(sushi.getTotal());
 
         System.out.println("=== Linked List yang menyimpan Object dari ADT ===");
         Linked_List food = new Linked_List();
