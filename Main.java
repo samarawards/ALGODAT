@@ -1,5 +1,7 @@
 public class Main {
         public static void main(String[] args) {
+        Linked_List food = new Linked_List();
+        
         Spaghetti spaghetti = new Spaghetti("Spaghetti", "Italia");
         NasiGoreng nasgor1 = new NasiGoreng("Nasi Goreng", "Indonesia");
         Sushi sushi = new Sushi("Sushi", "Jepang");
@@ -9,14 +11,13 @@ public class Main {
 
         //chef restock the food
         spaghetti.add(chef, 10);
+        if (!food.findData("Spaghetti")) food.addFirst(spaghetti);
         nasgor1.add(chef, 20);
+        if (!food.findData("Nasi Goreng")) food.addLast(nasgor1);
         sushi.add(chef, 50);
+        if (!food.findData("Sushi")) food.addFirst(sushi);
 
         System.out.println("=== Linked List yang menyimpan Object dari ADT ===");
-        Linked_List food = new Linked_List();
-        food.addFirst(nasgor1);
-        food.addLast(sushi);
-        food.addAfter(spaghetti, nasgor1);
         food.display();
 
         //buyer
@@ -27,8 +28,16 @@ public class Main {
         sushi.buy(customer, 5);
         if (sushi.getTotal() == 0) food.delete("Shusi");
 
-        System.out.println("=== Linked List yang menyimpan Object dari ADT (Updated)===");
+        System.out.println("=== Linked List yang menyimpan Object dari ADT (deleted)===");
         food.display();
 
+        //chef restock the food again
+        spaghetti.add(chef, 7);
+        if (!food.findData("Spaghetti")) food.addFirst(spaghetti);
+        nasgor1.add(chef, 8);
+        if (!food.findData("Nasi Goreng")) food.addLast(nasgor1);
+
+        System.out.println("=== Linked List yang menyimpan Object dari ADT (updated)===");
+        food.display();
     }
 }

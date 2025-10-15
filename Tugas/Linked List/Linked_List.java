@@ -66,14 +66,25 @@ public class Linked_List {
             temp = temp.next;
         }
         System.out.println(data + " is nothing in the list");
+    }
 
+    public boolean findData(String name){
+        temp = head;
+        while (temp != null){
+            if (temp.data.foodName.equals(name)){
+                return true;
+            }
+            temp = temp.next;
+        }
+        return false;
     }
 
     public void display(){
         Node temp = head;
+        System.out.print("Start -> ");
         while (temp != null) {
             System.out.print(temp.data.foodName + "("+ temp.data.total + ") -> ");
             temp = temp.next;
-        }System.out.println();
+        }System.out.println("Finish");
     }
 }
